@@ -1,9 +1,9 @@
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Country {
     private final String name;
     private final int population;
-    private HashMap<String, City> cities = new HashMap<String, City>();
+    private LinkedHashMap<String, City> cities = new LinkedHashMap<String, City>();
 
     public Country(String name, int population) {
         this.name = name;
