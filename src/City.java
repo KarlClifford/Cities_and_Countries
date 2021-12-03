@@ -21,11 +21,15 @@ public class City {
     }
 
     public boolean isLegalData() {
-        if ((this.population > 0) && (this.timezone > -12) && (this.timezone < 11)) {
+        if ((this.population > 0) && (this.timezone >= -12) && (this.timezone <= 11)) {
             return true;
         } else {
-            this.population = 0;
-            this.timezone = 0;
+            if (this.population < 0){
+                this.population = 0;
+            }
+            if ((this.timezone < -12) || (this.timezone > 11)) {
+                this.timezone = 0;
+            }
             return false;
         }
     }

@@ -41,14 +41,16 @@ public class Country {
         //Calculate the population of all cities
         int totalPopulationInAllCities =
                 cities.values().stream().mapToInt(City::getPopulation).sum();
+        System.out.println("HEY " + totalPopulationInAllCities + '\n' + this.population);
+        System.out.println(this.population - totalPopulationInAllCities);
 
         //if (this.population == 0) {
-            //totalPopulationInAllCities = 0;
+            //totalPopulationInAllCities *= +-1;
         //}
 
         final String output = name
-                + ": total population: " + population
-                + ", population outside listed cities: " + (population - totalPopulationInAllCities)
+                + ": total population: " + this.population
+                + ", population outside listed cities: " + (this.population - totalPopulationInAllCities)
                 + ", with cities" + '\n' + cities.values().toString().replaceAll("\\[|,\\ |]", "");
 
         return output;
