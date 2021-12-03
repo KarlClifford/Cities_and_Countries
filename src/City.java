@@ -13,6 +13,12 @@ public class City {
         return population;
     }
 
+    public String getName() { return this.name; }
+
+    public int timeDifference(City name) {
+        return this.timezone - name.timezone;
+    }
+
     @Override
     public String toString() {
         final String output = name
