@@ -1,12 +1,13 @@
 public class City {
     private final String name;
-    private final int population;
-    private final int timezone;
+    private int population;
+    private int timezone;
 
     public City(String name, int population, int timezone) {
         this.name = name;
         this.population = population;
         this.timezone = timezone;
+        isLegalData();
     }
 
     public int getPopulation() {
@@ -20,7 +21,13 @@ public class City {
     }
 
     public boolean isLegalData() {
-        return (this.population < 0) && (this.timezone > -12) || (this.timezone < 11);
+        if ((this.population > 0) && (this.timezone > -12) && (this.timezone < 11)) {
+            return true;
+        } else {
+            this.population = 0;
+            this.timezone = 0;
+            return false;
+        }
     }
 
     @Override

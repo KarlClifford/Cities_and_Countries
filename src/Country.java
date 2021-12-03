@@ -2,12 +2,13 @@ import java.util.LinkedHashMap;
 
 public class Country {
     private final String name;
-    private final int population;
+    private int population;
     private LinkedHashMap<String, City> cities = new LinkedHashMap<String, City>();
 
     public Country(String name, int population) {
         this.name = name;
         this.population = population;
+        isLegalData();
     }
 
     public void addCity(String name, int population, int timezone) {
@@ -29,6 +30,9 @@ public class Country {
     }
 
     public boolean isLegalData() {
+        if (this.population < 0) {
+            this.population = 0;
+        }
         return this.population > 0;
     }
 
@@ -37,6 +41,10 @@ public class Country {
         //Calculate the population of all cities
         int totalPopulationInAllCities =
                 cities.values().stream().mapToInt(City::getPopulation).sum();
+
+        if (this.population == 0) {
+            totalPopulationInAllCities = 0;
+        }
 
         final String output = name
                 + ": total population: " + population
