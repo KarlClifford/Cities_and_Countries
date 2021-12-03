@@ -42,9 +42,9 @@ public class Country {
         int totalPopulationInAllCities =
                 cities.values().stream().mapToInt(City::getPopulation).sum();
 
-        if (this.population == 0) {
-            totalPopulationInAllCities = 0;
-        }
+        //if (this.population == 0) {
+            //totalPopulationInAllCities = 0;
+        //}
 
         final String output = name
                 + ": total population: " + population
