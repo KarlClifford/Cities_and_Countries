@@ -15,6 +15,10 @@ public class Country {
 
     }
 
+    public City getCityByName(String name) {
+        return cities.get(name);
+    }
+
     @Override
     public String toString() {
         //Calculate the population of all cities
