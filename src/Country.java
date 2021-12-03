@@ -19,6 +19,19 @@ public class Country {
         return cities.get(name);
     }
 
+    public boolean deleteCity(String name) {
+        if (this.cities.containsKey(name)) {
+            this.cities.remove(name);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isLegalData() {
+        return this.population > 0;
+    }
+
     @Override
     public String toString() {
         //Calculate the population of all cities

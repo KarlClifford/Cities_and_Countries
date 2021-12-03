@@ -19,6 +19,10 @@ public class City {
         return this.timezone - name.timezone;
     }
 
+    public boolean isLegalData() {
+        return (this.population < 0) && (this.timezone > -12) || (this.timezone < 11);
+    }
+
     @Override
     public String toString() {
         final String output = name
