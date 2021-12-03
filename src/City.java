@@ -17,10 +17,10 @@ public class City {
     public String toString() {
         final String output = name
                 + ": has population " + population
-                + " and is in time zone " + timezone + " ";
+                + " and is in time zone " + timezone + ". ";
         //is a megacity?
         final String isMegaCity =
-                (population >= 10000000)?"It Is NOT a megacity":"It Is a megacity";
+                (population <= 10000000)?"It IS NOT a megacity":"It IS a megacity";
         return output + isMegaCity + '\n';
     }
 }
