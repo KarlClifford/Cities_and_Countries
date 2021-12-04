@@ -8,7 +8,7 @@ public class Country {
 
     private final String name;
     private int population;
-    private final LinkedHashMap<String, City> cities = new LinkedHashMap<>();
+    private final LinkedHashMap<String, City> citiesMap = new LinkedHashMap<>();
 
     public Country(String name, int population) {
         this.name = name;
@@ -17,17 +17,17 @@ public class Country {
     }
 
     public void addCity(String name, int population, int timezone) {
-        cities.put(name, new City(name, population, timezone));
+        citiesMap.put(name, new City(name, population, timezone));
 
     }
 
     public City getCityByName(String name) {
-        return cities.get(name);
+        return citiesMap.get(name);
     }
 
     public boolean deleteCity(String name) {
-        if (this.cities.containsKey(name)) {
-            this.cities.remove(name);
+        if (this.citiesMap.containsKey(name)) {
+            this.citiesMap.remove(name);
             return true;
         } else {
             return false;
@@ -45,10 +45,10 @@ public class Country {
     public String toString() {
         //Calculate the population of all cities
         int totalPopulationInAllCities =
-                cities.values().stream().mapToInt(City::getPopulation).sum();
+                citiesMap.values().stream().mapToInt(City::getPopulation).sum();
 
         return DIALOGUE_OUTPUT.formatted(name, this.population,
                 this.population - totalPopulationInAllCities,
-                cities.values().toString().replaceAll("\\[|, |]", ""));
+                citiesMap.values().toString().replaceAll("\\[|, |]", ""));
     }
 }
