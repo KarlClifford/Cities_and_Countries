@@ -42,7 +42,7 @@ public class City {
         } else {
 
             if (this.population <= MINIMUM_POPULATION_ALLOWED){
-                this.population = MINIMUM_POPULATION_ALLOWED;
+                this.population = ERROR_VALUE;
             }
             if ((this.timezone < MINIMUM_TIMEZONE_ALLOWED)
                     || (this.timezone > MAXIMUM_TIMEZONE_ALLOWED)
