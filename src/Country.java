@@ -1,9 +1,14 @@
 import java.util.LinkedHashMap;
 
 public class Country {
+    public static final int MINIMUM_POPULATION_ALLOWED = 0;
+    public static final int ERROR_VALUE = 0;
+    public static final String DIALOGUE_OUTPUT =
+            "%s: total population: %d, population outside listed cities: %d, with cities\n%s";
+
     private final String name;
     private int population;
-    private LinkedHashMap<String, City> cities = new LinkedHashMap<String, City>();
+    private final LinkedHashMap<String, City> cities = new LinkedHashMap<>();
 
     public Country(String name, int population) {
         this.name = name;
@@ -30,8 +35,8 @@ public class Country {
     }
 
     public boolean isLegalData() {
-        if (this.population < 0) {
-            this.population = 0;
+        if (this.population < MINIMUM_POPULATION_ALLOWED) {
+            this.population = ERROR_VALUE;
         }
         return this.population > 0;
     }
@@ -41,18 +46,9 @@ public class Country {
         //Calculate the population of all cities
         int totalPopulationInAllCities =
                 cities.values().stream().mapToInt(City::getPopulation).sum();
-        //System.out.println("HEY " + totalPopulationInAllCities + '\n' + this.population);
-        //System.out.println(this.population - totalPopulationInAllCities);
 
-        //if (this.population == 0) {
-            //totalPopulationInAllCities *= +-1;
-        //}
-
-        final String output = name
-                + ": total population: " + this.population
-                + ", population outside listed cities: " + (this.population - totalPopulationInAllCities)
-                + ", with cities" + '\n' + cities.values().toString().replaceAll("\\[|,\\ |]", "");
-
-        return output;
+        return DIALOGUE_OUTPUT.formatted(name, this.population,
+                this.population - totalPopulationInAllCities,
+                cities.values().toString().replaceAll("\\[|, |]", ""));
     }
 }
