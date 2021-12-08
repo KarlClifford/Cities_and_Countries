@@ -14,7 +14,6 @@ public class City {
     private int timezone;
 
     public City(String name, int population, int timezone) {
-        //isLegalData();
         this.name = name;
         this.population = population;
         this.timezone = timezone;
