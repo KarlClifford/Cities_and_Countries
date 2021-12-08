@@ -5,13 +5,13 @@ import java.util.LinkedHashMap;
 
 public class Country {
 
-    //To change the minimum population allowed in a country just change these values.
-    public static final int MINIMUM_POPULATION_ALLOWED = 0;
-    public static final int ERROR_VALUE = 0;
-
     //Output strings - to change language change this values.
     public static final String DIALOGUE_OUTPUT =
             "%s: total population: %d, population outside listed cities: %d, with cities\n%s";
+
+    //To change the minimum population allowed in a country just change these values.
+    public static final int MINIMUM_POPULATION_ALLOWED = 0;
+    public static final int ERROR_VALUE = 0;
 
     //Declare instance variables here.
     private final String name;
