@@ -5,15 +5,15 @@ import java.util.LinkedHashMap;
 
 public class Country {
 
-    //To change the minimum population allowed in a country just change these values
+    //To change the minimum population allowed in a country just change these values.
     public static final int MINIMUM_POPULATION_ALLOWED = 0;
     public static final int ERROR_VALUE = 0;
 
-    //Output strings - to change language change this values
+    //Output strings - to change language change this values.
     public static final String DIALOGUE_OUTPUT =
             "%s: total population: %d, population outside listed cities: %d, with cities\n%s";
 
-    //Declare instance variables here
+    //Declare instance variables here.
     private final String name;
     private int population;
     private final LinkedHashMap<String, City> citiesMap = new LinkedHashMap<>();
@@ -31,11 +31,19 @@ public class Country {
 
     }
 
-    //Returns a City object requested based on the name parameter entered
+    /*
+    Returns a City object from citiesMap by its key value. Make sure that the
+    key value exists first.
+     */
     public City getCityByName(String name) {
-        return citiesMap.get(name);
+        return citiesMap.containsKey(name)
+                ? citiesMap.get(name) : new City(" ", 0, 0);
     }
 
+    /*
+    Returns a boolean, true if the city was removed correctly or false if
+    the city doesn't exist.
+     */
     public boolean deleteCity(String name) {
         if (this.citiesMap.containsKey(name)) {
             this.citiesMap.remove(name);
@@ -45,16 +53,21 @@ public class Country {
         }
     }
 
+    /*
+    Returns a boolean, true if the population is greater than the minimum population
+    allowed.
+     */
     public boolean isLegalData() {
         if (this.population < MINIMUM_POPULATION_ALLOWED) {
             this.population = ERROR_VALUE;
         }
-        return this.population > 0;
+        return this.population > MINIMUM_POPULATION_ALLOWED;
     }
 
+    //Returns a formatted String of the name and population of the country and all city objects.
     @Override
     public String toString() {
-        //Calculate the population of all cities combined
+        //Calculate the population in all cities and add them together.
         int totalPopulationInAllCities =
                 citiesMap.values().stream().mapToInt(City::getPopulation).sum();
 
