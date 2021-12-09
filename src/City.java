@@ -5,17 +5,20 @@ initialisation.
  */
 public class City {
 
-    //Output strings - to change language change this values.
+    //Output strings - to change language change these values.
     public static final String DIALOGUE_IS_MEGACITY = "It IS NOT a megacity";
     public static final String DIALOGUE_NOT_MEGACITY = "It IS a megacity";
     public static final String DIALOGUE_OUTPUT =
             "%s: has population %d and is in time zone %d. ";
 
-    //To change the minimum population allowed in a City just change this value.
+    //To change the minimum population allowed in a City just change these values.
     public static final int MINIMUM_POPULATION_ALLOWED = 0;
     public static final int ERROR_VALUE = 0;
 
-    //To change the minimum population allowed in a MegaCity just change these values.
+    /*
+    To change the minimum population for a city to be classed as a MegaCity
+    just change these values.
+     */
     public static final int MINIMUM_POPULATION_FOR_MEGACITY = 10000000;
 
     //To change the "safe" range of allowed timezones just change these values.
@@ -56,7 +59,7 @@ public class City {
 
     /*
     Returns a boolean, true if the population is greater than the minimum population
-    allowed and the timezone is within the "safe" range of timezones.
+    permitted and the timezone is within the "safe" range of timezones.
      */
     public boolean isLegalData() {
         if ((this.population > MINIMUM_POPULATION_ALLOWED)
