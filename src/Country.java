@@ -65,6 +65,14 @@ public class Country {
     }
 
     /*
+    Returns an integer value of the sum of the population in every city in the
+    citiesMap array.
+     */
+    private int getTotalPopulationInAllCities() {
+        return citiesMap.values().stream().mapToInt(City::getPopulation).sum();
+    }
+
+    /*
     Returns a boolean, true if the population is greater than the minimum population
     permitted.
      */
@@ -78,12 +86,8 @@ public class Country {
     //Returns a formatted String of the name and population of the country and all city objects.
     @Override
     public String toString() {
-        //Calculate the population in all cities by adding them together.
-        int totalPopulationInAllCities =
-                citiesMap.values().stream().mapToInt(City::getPopulation).sum();
-
         return String.format(DIALOGUE_OUTPUT, name, this.population,
-                this.population - totalPopulationInAllCities,
+                this.population - getTotalPopulationInAllCities(),
                 citiesMap.values().toString().replaceAll("\\[|, |]", ""));
     }
 }
