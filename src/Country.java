@@ -1,6 +1,6 @@
 /*
 FEEDBACK RESPONSE FROM CW1:
-- Improved comment layouts for example ensured that multi-line comments start on
+- Improved comment layouts. For example, ensured that multi-line comments start on
   a new line.
 - Improved comment explanations. They are now shorter, more to the point and
   precise for better readability and to better explain what the code is achieving.
