@@ -1,4 +1,11 @@
+/*
+FEEDBACK RESPONSE FROM CW1:
+- Improved comment layouts for example ensured that multi-line comments start on
+  a new line.
+- Improved comment explanations. They are now shorter, more to the point and
+  precise for better readability and to better explain what the code is achieving.
 
+ */
 
 import java.util.LinkedHashMap;
 
@@ -9,7 +16,7 @@ initialisation.
  */
 public class Country {
 
-    //Output strings - to change language change this values.
+    //Output string - to change language change this value.
     public static final String DIALOGUE_OUTPUT =
             "%s: total population: %d, population outside listed cities: %d, with cities\n%s";
 
