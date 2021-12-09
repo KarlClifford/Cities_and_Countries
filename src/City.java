@@ -41,7 +41,7 @@ public class City {
 
     //Returns an Integer value of the population stored in a given city.
     public int getPopulation() {
-        return population;
+        return this.population;
     }
 
     //Returns a String value of the name stored in a given city.
