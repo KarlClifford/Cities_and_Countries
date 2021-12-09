@@ -10,7 +10,7 @@ FEEDBACK RESPONSE FROM CW1:
 import java.util.LinkedHashMap;
 
 /*
-The Country class allows the name, population and a list of cities in a country
+The Country class allows the name, population and an array of cities in a country
 to be stored. Legal data such as a minimum population size is checked during
 initialisation.
  */
@@ -36,14 +36,14 @@ public class Country {
         isLegalData();
     }
 
-    //Call to add a new city object to the citiesMap
+    //Call to add a new city object to the citiesMap.
     public void addCity(String name, int population, int timezone) {
         citiesMap.put(name, new City(name, population, timezone));
 
     }
 
     /*
-    Returns a City object from citiesMap by its key value. Make sure that the
+    Returns a City object from citiesMap by its key value and Makes sure that the
     key value exists first.
      */
     public City getCityByName(String name) {
@@ -66,7 +66,7 @@ public class Country {
 
     /*
     Returns a boolean, true if the population is greater than the minimum population
-    allowed.
+    permitted.
      */
     public boolean isLegalData() {
         if (this.population < MINIMUM_POPULATION_ALLOWED) {
@@ -78,7 +78,7 @@ public class Country {
     //Returns a formatted String of the name and population of the country and all city objects.
     @Override
     public String toString() {
-        //Calculate the population in all cities and add them together.
+        //Calculate the population in all cities by adding them together.
         int totalPopulationInAllCities =
                 citiesMap.values().stream().mapToInt(City::getPopulation).sum();
 
