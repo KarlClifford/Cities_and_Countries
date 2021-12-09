@@ -1,3 +1,8 @@
+/*
+The City class allows the name, population and timezone of a city to be stored.
+Legal data such as a minimum population size and time zone range is checked during
+initialisation.
+ */
 public class City {
 
     //Output strings - to change language change this values.

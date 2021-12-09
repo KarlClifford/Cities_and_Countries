@@ -1,8 +1,12 @@
-/*
-.........
- */
+
+
 import java.util.LinkedHashMap;
 
+/*
+The Country class allows the name, population and a list of cities in a country
+to be stored. Legal data such as a minimum population size is checked during
+initialisation.
+ */
 public class Country {
 
     //Output strings - to change language change this values.
