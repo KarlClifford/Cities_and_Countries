@@ -43,8 +43,8 @@ public class City {
     public boolean isLegalData() {
         if ((this.population > MINIMUM_POPULATION_ALLOWED)
                 && (this.timezone >= MINIMUM_TIMEZONE_ALLOWED)
-                && (this.timezone <= MAXIMUM_TIMEZONE_ALLOWED)
-                && (this.timezone != FORBIDDEN_TIMEZONE)) {
+                && (this.timezone <= MAXIMUM_TIMEZONE_ALLOWED)) {
+                //&& (this.timezone != FORBIDDEN_TIMEZONE)) {
             return true;
         } else {
 
@@ -52,8 +52,8 @@ public class City {
                 this.population = ERROR_VALUE;
             }
             if ((this.timezone < MINIMUM_TIMEZONE_ALLOWED)
-                    || (this.timezone > MAXIMUM_TIMEZONE_ALLOWED)
-                    || (this.timezone == FORBIDDEN_TIMEZONE)) {
+                    || (this.timezone > MAXIMUM_TIMEZONE_ALLOWED)) {
+                    //|| (this.timezone == FORBIDDEN_TIMEZONE)) {
                 this.timezone = ERROR_VALUE;
             }
             return false;
