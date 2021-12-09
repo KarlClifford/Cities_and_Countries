@@ -18,7 +18,7 @@ public class Country {
     private int population;
     private final LinkedHashMap<String, City> citiesMap = new LinkedHashMap<>();
 
-    //Primary constructor. Checks for legal data on class initialisation.
+    //Primary constructor. Checks for legal data on initialisation.
     public Country(String name, int population) {
         this.name = name;
         this.population = population;
