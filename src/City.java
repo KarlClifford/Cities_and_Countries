@@ -1,14 +1,22 @@
 public class City {
-    public static final int MINIMUM_POPULATION_ALLOWED = 0;
-    public static final int MINIMUM_TIMEZONE_ALLOWED = -12;
-    public static final int MAXIMUM_TIMEZONE_ALLOWED = 11;
-    public static final int FORBIDDEN_TIMEZONE = 0;
-    public static final int MINIMUM_POPULATION_FOR_MEGACITY = 10000000;
-    public static final int ERROR_VALUE = 0;
+
+    //Output strings - to change language change this values.
     public static final String DIALOGUE_IS_MEGACITY = "It IS NOT a megacity";
     public static final String DIALOGUE_NOT_MEGACITY = "It IS a megacity";
     public static final String DIALOGUE_OUTPUT =
             "%s: has population %d and is in time zone %d. ";
+
+    //To change the minimum population allowed in a country just change this value.
+    public static final int MINIMUM_POPULATION_ALLOWED = 0;
+
+    //To change the range of allowed timezones just change these values
+    public static final int MINIMUM_TIMEZONE_ALLOWED = -12;
+    public static final int MAXIMUM_TIMEZONE_ALLOWED = 11;
+    public static final int FORBIDDEN_TIMEZONE = 0;
+
+    public static final int MINIMUM_POPULATION_FOR_MEGACITY = 10000000;
+    public static final int ERROR_VALUE = 0;
+
     private final String name;
     private int population;
     private int timezone;
