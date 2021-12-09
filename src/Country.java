@@ -71,7 +71,7 @@ public class Country {
         int totalPopulationInAllCities =
                 citiesMap.values().stream().mapToInt(City::getPopulation).sum();
 
-        return DIALOGUE_OUTPUT.formatted(name, this.population,
+        return String.format(DIALOGUE_OUTPUT, name, this.population,
                 this.population - totalPopulationInAllCities,
                 citiesMap.values().toString().replaceAll("\\[|, |]", ""));
     }
