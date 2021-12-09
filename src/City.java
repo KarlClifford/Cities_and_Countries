@@ -74,14 +74,14 @@ public class City {
     }
 
     /*
-    Returns a boolean, true if the city can be classed as a megacity based
-    on the minimum population required for a megacity.
+    Returns a boolean, true if the city meets the minimum population required
+    to be classed as a megacity.
      */
     public boolean isMegaCity() {
         return population <= MINIMUM_POPULATION_FOR_MEGACITY;
     }
 
-    //Returns a formatted String of the city object.
+    //Returns a formatted String of the data stored in the city object.
     @Override
     public String toString() {
         final String output = String.format(DIALOGUE_OUTPUT, name, population, timezone);
